@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Character counter</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header__top">
+        <figure class="header__logo">
+          <img src="assets/images/logo-light-theme.svg" alt="" srcset="">
+        </figure>
+        <button class="header__dark-mode-btn" aria-label="Dark mode"></button>
+      </div>
+      <h1 class="header__heading">Analyze your text in real-time.</h1>
+    </header>
+    <main>
+      <form class="form">
+        <textarea name="text" rows="10" placeholder="Start typing here… (or paste your text)"></textarea>
+        <div class="form__row">
+          <div class="form__element">
+            <input type="checkbox" name="spaces" id="spaces">
+            <label for="spaces">Exclude Spaces</label>
+          </div>
+          <div class="form__element">
+            <input type="checkbox" name="limit" id="limit">
+            <label for="limit">Set Character Limit</label>
+          </div>
+          <span class="form__time-message">Approx. reading time: <span class="form__time-value"></span> minutes</span>
+        </div>
+      </form>
+      <div class="results">
+        <ul class="results__cards">
+          <li class="results__card card">
+            <span class="card__heading">278</span>
+            <span class="card__sub">Total Characters</span>
+          </li>
+          <li class="results__card card">
+            <span class="card__heading">39</span>
+            <span class="card__sub">Word Count</span>
+          </li>
+          <li class="results__card card">
+            <span class="card__heading">04</span>
+            <span class="card__sub">Sentence Count</span>
+          </li>
+        </ul>
+        <div class="results__density density">
+          <h2 class="density__heading">Letter Density</h2>
+          <span class="density__message">No characters found. Start typing to see letter density.</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
