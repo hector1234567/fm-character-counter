@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'DM Sans';
+    src: url(/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf);
+}
+
+$Font: 'DM Sans';
+
+$Regular: 400;
+$Semibold: 600;
+$Bold: 700;
+
+@mixin text-1 {
+    font-size: 6.4rem;
+    letter-spacing: -.01rem;
+    font-weight: $Bold;
+}
+
+@mixin text-1-mobile {
+    font-size: 4rem;
+    letter-spacing: -.01rem;
+    font-weight: $Bold;
+}
+
+@mixin text-2 {
+    font-size: 2.4rem;
+    letter-spacing: -.01rem;
+    font-weight: 600;
+    line-height: 130%;
+}
+
+@mixin text-3 {
+    font-size: 2rem;
+    letter-spacing: -.06rem;
+    font-weight: $Regular;
+    line-height: 140%;
+}
+
+@mixin text-4 {
+    font-size: 1.6rem;
+    letter-spacing: -.06rem;
+    font-weight: $Regular;
+    line-height: 130%;
+}
