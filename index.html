@@ -18,11 +18,11 @@
         </figure>
         <button class="header__dark-mode-btn" aria-label="Dark mode"></button>
       </div>
-      <h1 class="header__heading">Analyze your text in real-time.</h1>
+      <h1 class="header__heading">Analyze your text<br>in real-time.</h1>
     </header>
     <main>
       <form class="form">
-        <textarea name="text" rows="10" placeholder="Start typing here… (or paste your text)"></textarea>
+        <textarea autofocus name="text" placeholder="Start typing here… (or paste your text)"></textarea>
         <div class="form__row">
           <div class="form__element">
             <input type="checkbox" name="spaces" id="spaces">
@@ -37,15 +37,15 @@
       </form>
       <div class="results">
         <ul class="results__cards">
-          <li class="results__card card">
+          <li class="results__card card card--1">
             <span class="card__heading">278</span>
             <span class="card__sub">Total Characters</span>
           </li>
-          <li class="results__card card">
+          <li class="results__card card card--2">
             <span class="card__heading">39</span>
             <span class="card__sub">Word Count</span>
           </li>
-          <li class="results__card card">
+          <li class="results__card card card--3">
             <span class="card__heading">04</span>
             <span class="card__sub">Sentence Count</span>
           </li>

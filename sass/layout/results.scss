@@ -1,0 +1,13 @@
+.results {
+    &__cards {
+        list-style: none;
+        display: flex;
+        gap: 1.6rem;
+        margin-bottom: 2.4rem;
+    }
+
+    &__card {
+        min-height: 15rem;
+        width: 100%;
+    }
+}

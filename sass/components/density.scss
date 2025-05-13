@@ -1,0 +1,12 @@
+.density {
+  &__heading {
+    @include text-2;
+    color: $Neutral-900;
+    margin-bottom: 2rem;
+  }
+
+  &__message {
+    @include text-4;
+    color: $Neutral-600;
+  }
+}

@@ -1,0 +1,39 @@
+.header {
+    margin-bottom: 4.8rem;
+    
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4.8rem;
+    }
+
+    &__logo {
+        display: flex;
+
+        img {
+            height: 4rem;
+        }
+    }
+
+    &__dark-mode-btn {
+        width: 4.4rem;
+        height: 4.4rem;
+        border: none;
+        background-color: $Neutral-100;
+        border-radius: .8rem;
+        background-image: url(/assets/images/icon-moon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($Neutral-100, 2);
+        }
+    }
+
+    &__heading {
+        @include text-1;
+        text-align: center;
+    }
+}

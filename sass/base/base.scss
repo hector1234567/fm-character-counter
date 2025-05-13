@@ -11,5 +11,17 @@ html {
 }
 
 body {
-    font-family: $Font;
+    font-family: $Font, serif;
+    background-color: $Neutral-0;
+    color: $Neutral-900;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 99rem;
+    margin: 3.2rem;
 }

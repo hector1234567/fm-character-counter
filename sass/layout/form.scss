@@ -1,0 +1,53 @@
+.form {
+    margin-bottom: 4.8rem;
+
+    textarea {
+        width: 100%;
+        resize: none;
+        background-color: $Neutral-100;
+        border: .2rem solid $Neutral-200;
+        border-radius: 1.2rem;
+        font-family: inherit;
+        @include text-3;
+        padding: 2rem;
+        color: $Neutral-700;
+        field-sizing: content;
+        min-height: 20rem;
+        margin-bottom: 1.6rem;
+
+        &:focus-visible {
+           outline: none;
+        }
+
+        &::placeholder {
+            @include text-3;
+            color: $Neutral-700;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+        @include text-4;
+    }
+
+    &__element {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        input {
+            accent-color: $Blue-500;
+            cursor: pointer;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    }
+
+    &__time-message {
+        margin-left: auto;
+    }
+}
