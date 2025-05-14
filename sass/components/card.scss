@@ -11,8 +11,17 @@
   background-position: center right -3rem;
   background-size: contain;
 
+  @media (max-width: $Mobile) {
+    background-size: unset;
+    background-position: center right -5rem;
+  }
+
   &__heading {
     @include text-1;
+
+    @media (max-width: $Mobile) {
+      @include text-1-mobile;
+    }
   }
 
   &__sub {

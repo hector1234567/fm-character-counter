@@ -1,39 +1,65 @@
 .header {
+  margin-bottom: 4.8rem;
+
+  @media (max-width: $Tablet) {
+    margin-bottom: 5.8rem;
+  }
+
+  @media (max-width: $Mobile) {
+    margin-bottom: 4rem;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 4.8rem;
-    
-    &__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 4.8rem;
+
+    @media (max-width: $Tablet) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    img {
+      height: 4rem;
+
+      @media (max-width: $Mobile) {
+        height: 3rem;
+      }
+    }
+  }
+
+  &__dark-mode-btn {
+    width: 4.4rem;
+    height: 4.4rem;
+    border: none;
+    background-color: $Neutral-100;
+    border-radius: 0.8rem;
+    background-image: url(/assets/images/icon-moon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    cursor: pointer;
+
+    @media (max-width: $Mobile) {
+      width: 3.2rem;
+      height: 3.2rem;
     }
 
-    &__logo {
-        display: flex;
-
-        img {
-            height: 4rem;
-        }
+    &:hover {
+      background-color: darken($Neutral-100, 2);
     }
+  }
 
-    &__dark-mode-btn {
-        width: 4.4rem;
-        height: 4.4rem;
-        border: none;
-        background-color: $Neutral-100;
-        border-radius: .8rem;
-        background-image: url(/assets/images/icon-moon.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
+  &__heading {
+    @include text-1;
+    text-align: center;
 
-        &:hover {
-            background-color: darken($Neutral-100, 2);
-        }
+    @media (max-width: $Mobile) {
+      @include text-1-mobile;
     }
-
-    &__heading {
-        @include text-1;
-        text-align: center;
-    }
+  }
 }

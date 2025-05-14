@@ -1,13 +1,21 @@
 .results {
-    &__cards {
-        list-style: none;
-        display: flex;
-        gap: 1.6rem;
-        margin-bottom: 2.4rem;
-    }
+  &__cards {
+    list-style: none;
+    display: flex;
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
 
-    &__card {
-        min-height: 15rem;
-        width: 100%;
+    @media (max-width: $Mobile) {
+      flex-direction: column;
     }
+  }
+
+  &__card {
+    min-height: 15rem;
+    width: 100%;
+
+    @media (max-width: $Mobile) {
+      min-height: 13rem;
+    }
+  }
 }
