@@ -42,4 +42,8 @@
     background-color: $Orange-500;
     background-image: url(/assets/images/pattern-sentence-count.svg);
   }
+
+  #no-space-message {
+    text-wrap: nowrap;
+  }
 }

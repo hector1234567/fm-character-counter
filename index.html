@@ -13,19 +13,17 @@
 
     <title>Frontend Mentor | Character counter</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
     <div class="container">
       <header class="header">
         <div class="header__top">
-          <figure class="header__logo">
-            <!-- <img src="assets/images/logo-light-theme.svg" alt="" srcset="" /> -->
-          </figure>
-          <input type="checkbox" id="theme-checkbox" />
+          <figure class="header__logo"></figure>
+          <input type="checkbox" id="theme-checkbox" checked />
           <label for="theme-checkbox">
             <span class="header__dark-mode-btn" aria-label="Dark mode"></span>
           </label>
-          <!-- <button class="header__dark-mode-btn" aria-label="Dark mode"></button> -->
         </div>
         <h1 class="header__heading">Analyze your text<br />in real-time.</h1>
       </header>
@@ -34,16 +32,18 @@
           <textarea
             autofocus
             name="text"
+            id="text-container"
             placeholder="Start typing here… (or paste your text)"
           ></textarea>
           <div class="form__row">
             <div class="form__element">
-              <input type="checkbox" name="spaces" id="spaces" />
-              <label for="spaces">Exclude Spaces</label>
+              <input type="checkbox" id="exclude-spaces" />
+              <label for="exclude-spaces">Exclude Spaces</label>
             </div>
             <div class="form__element">
-              <input type="checkbox" name="limit" id="limit" />
-              <label for="limit">Set Character Limit</label>
+              <input type="checkbox" id="check-char-limit" />
+              <label for="check-char-limit">Set Character Limit</label>
+              <input type="text" id="max-words" />
             </div>
             <span class="form__time-message"
               >Approx. reading time:
@@ -54,15 +54,18 @@
         <div class="results">
           <ul class="results__cards">
             <li class="results__card card card--1">
-              <span class="card__heading">278</span>
-              <span class="card__sub">Total Characters</span>
+              <span class="card__heading" id="char-count">0</span>
+              <span class="card__sub"
+                >Total Characters
+                <span id="no-space-message">(no space)</span></span
+              >
             </li>
             <li class="results__card card card--2">
-              <span class="card__heading">39</span>
+              <span class="card__heading" id="word-count">0</span>
               <span class="card__sub">Word Count</span>
             </li>
             <li class="results__card card card--3">
-              <span class="card__heading">04</span>
+              <span class="card__heading" id="sentence-count">0</span>
               <span class="card__sub">Sentence Count</span>
             </li>
           </ul>

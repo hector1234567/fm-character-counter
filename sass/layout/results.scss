@@ -19,3 +19,9 @@
     }
   }
 }
+
+:root:not(:has(#exclude-spaces:checked)) {
+  #no-space-message {
+    display: none;
+  }
+}

@@ -51,14 +51,31 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    height: 3rem;
 
     input {
       accent-color: $Blue-500;
       cursor: pointer;
+
+      &:focus-visible {
+        outline: solid 0.2rem $Blue-500;
+        box-shadow: 0 0 1rem 0 $Blue-400;
+      }
     }
 
     label {
       cursor: pointer;
+    }
+
+    input[type="text"] {
+      background-color: inherit;
+      color: inherit;
+      width: 5.5rem;
+      height: 2.9rem;
+      text-align: center;
+      border: 0.1rem solid var(--container-border-color);
+      border-radius: 0.6rem;
+      margin-left: 1rem;
     }
   }
 
@@ -68,5 +85,11 @@
     @media (max-width: $Mobile) {
       margin-left: unset;
     }
+  }
+}
+
+:root:not(:has(#check-char-limit:checked)) {
+  #max-words {
+    display: none;
   }
 }
