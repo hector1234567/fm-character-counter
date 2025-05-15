@@ -10,6 +10,7 @@
   --container-background-color: #f2f2f7;
   --container-text-color: #2a2b37;
   --container-border-color: #e4e4ef;
+  --color-error: #da3701;
 }
 :root:has(#theme-checkbox:checked) {
   color-scheme: dark;
@@ -19,6 +20,7 @@
   --container-background-color: #21222c;
   --container-text-color: #e4e4ef;
   --container-border-color: #404254;
+  --color-error: #fe8159;
 }
 
 *,
@@ -183,6 +185,16 @@ body {
     margin-bottom: 4rem;
   }
 }
+.form__error-message {
+  font-size: 1.6rem;
+  letter-spacing: -0.06rem;
+  font-weight: 400;
+  line-height: 130%;
+  color: var(--color-error);
+  padding-bottom: 1.6rem;
+  margin-top: -0.8rem;
+  display: none;
+}
 .form textarea {
   width: 100%;
   resize: none;
@@ -213,6 +225,13 @@ body {
 .form textarea:focus-visible {
   border: solid 0.2rem #c27cf8;
   box-shadow: 0 0 1rem 0 #d3a0fa;
+}
+.form textarea:invalid {
+  border: solid 0.2rem var(--color-error);
+  box-shadow: 0 0 1rem 0 var(--color-error);
+}
+.form textarea:invalid ~ .form__error-message {
+  display: block;
 }
 .form__row {
   display: flex;
@@ -247,7 +266,7 @@ body {
 .form__element label {
   cursor: pointer;
 }
-.form__element input[type=text] {
+.form__element input[type=number] {
   background-color: inherit;
   color: inherit;
   width: 5.5rem;

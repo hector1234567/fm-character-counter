@@ -35,6 +35,9 @@
             id="text-container"
             placeholder="Start typing here… (or paste your text)"
           ></textarea>
+          <div class="form__error-message">
+            &#9432; Limit reached! Your text exceeds 300 characters.
+          </div>
           <div class="form__row">
             <div class="form__element">
               <input type="checkbox" id="exclude-spaces" />
@@ -43,11 +46,10 @@
             <div class="form__element">
               <input type="checkbox" id="check-char-limit" />
               <label for="check-char-limit">Set Character Limit</label>
-              <input type="text" id="max-words" />
+              <input type="number" id="max-words" value="300" />
             </div>
             <span class="form__time-message"
-              >Approx. reading time:
-              <span class="form__time-value"></span> minutes</span
+              >Approx. reading time: 0 minutes</span
             >
           </div>
         </form>

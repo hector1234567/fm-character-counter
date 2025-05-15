@@ -32,6 +32,8 @@ $Orange-800: #da3701;
   --container-text-color: #{$Neutral-700};
   --container-border-color: #{$Neutral-200};
 
+  --color-error: #{$Orange-800};
+
   &:has(#theme-checkbox:checked) {
     color-scheme: dark;
     --background-color: #{$Neutral-900};
@@ -41,5 +43,7 @@ $Orange-800: #da3701;
     --container-background-color: #{$Neutral-800};
     --container-text-color: #{$Neutral-200};
     --container-border-color: #{$Neutral-600};
+
+    --color-error: #{$Orange-500};
   }
 }

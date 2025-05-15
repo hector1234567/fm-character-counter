@@ -5,6 +5,14 @@
     margin-bottom: 4rem;
   }
 
+  &__error-message {
+    @include text-4;
+    color: var(--color-error);
+    padding-bottom: 1.6rem;
+    margin-top: -0.8rem;
+    display: none;
+  }
+
   textarea {
     width: 100%;
     resize: none;
@@ -31,6 +39,15 @@
     &:focus-visible {
       border: solid 0.2rem $Blue-500;
       box-shadow: 0 0 1rem 0 $Blue-400;
+    }
+
+    &:invalid {
+      border: solid 0.2rem var(--color-error);
+      box-shadow: 0 0 1rem 0 var(--color-error);
+
+      & ~ .form__error-message {
+        display: block;
+      }
     }
   }
 
@@ -67,7 +84,7 @@
       cursor: pointer;
     }
 
-    input[type="text"] {
+    input[type="number"] {
       background-color: inherit;
       color: inherit;
       width: 5.5rem;
