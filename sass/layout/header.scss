@@ -22,21 +22,28 @@
 
   &__logo {
     display: flex;
+    height: 4rem;
+    width: 25rem;
+    background-image: url(/assets/images/logo-light-theme.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
 
-    img {
-      height: 4rem;
-
-      @media (max-width: $Mobile) {
-        height: 3rem;
-      }
+    @media (max-width: $Mobile) {
+      height: 3rem;
     }
   }
 
+  #theme-checkbox {
+    display: none;
+  }
+
   &__dark-mode-btn {
+    display: block;
     width: 4.4rem;
     height: 4.4rem;
     border: none;
-    background-color: $Neutral-100;
+    background-color: var(--container-background-color);
     border-radius: 0.8rem;
     background-image: url(/assets/images/icon-moon.svg);
     background-repeat: no-repeat;
@@ -50,7 +57,7 @@
     }
 
     &:hover {
-      background-color: darken($Neutral-100, 2);
+      opacity: 0.7;
     }
   }
 
@@ -61,5 +68,15 @@
     @media (max-width: $Mobile) {
       @include text-1-mobile;
     }
+  }
+}
+
+:root:has(#theme-checkbox:checked) {
+  .header__logo {
+    background-image: url(/assets/images/logo-dark-theme.svg);
+  }
+
+  .header__dark-mode-btn {
+    background-image: url(/assets/images/icon-sun.svg);
   }
 }

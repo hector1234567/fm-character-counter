@@ -21,3 +21,25 @@ $Yellow-500: #ff9f00;
 
 $Orange-500: #fe8159;
 $Orange-800: #da3701;
+
+:root {
+  color-scheme: light;
+  --background-color: #{$Neutral-0};
+  --text-color: #{$Neutral-900};
+  --message-color: #{$Neutral-600};
+
+  --container-background-color: #{$Neutral-100};
+  --container-text-color: #{$Neutral-700};
+  --container-border-color: #{$Neutral-200};
+
+  &:has(#theme-checkbox:checked) {
+    color-scheme: dark;
+    --background-color: #{$Neutral-900};
+    --text-color: #{$Neutral-200};
+    --message-color: #{$Neutral-200};
+
+    --container-background-color: #{$Neutral-800};
+    --container-text-color: #{$Neutral-200};
+    --container-border-color: #{$Neutral-600};
+  }
+}

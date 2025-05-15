@@ -1,5 +1,5 @@
 $Tablet: 900px;
-$Mobile: 430px;
+$Mobile: 450px;
 
 *,
 *::after,
@@ -11,6 +11,7 @@ $Mobile: 430px;
 
 html {
   font-size: 62.5%;
+  color-scheme: dark light;
 
   @media (max-width: 768px) {
     font-size: 55%;
@@ -20,9 +21,9 @@ html {
     font-size: 45%;
   }
 
-  @media (max-width: 555px) {
-    font-size: 40%;
-  }
+  //   @media (max-width: 555px) {
+  //     font-size: 40%;
+  //   }
 
   @media (max-width: $Mobile) {
     font-size: 62.5%;
@@ -43,8 +44,8 @@ html {
 
 body {
   font-family: $Font, serif;
-  background-color: $Neutral-0;
-  color: $Neutral-900;
+  background-color: var(--background-color);
+  color: var(--text-color);
 
   display: flex;
   flex-direction: column;
