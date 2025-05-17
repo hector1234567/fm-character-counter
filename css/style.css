@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "DM Sans";
   src: url(/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf);
@@ -382,6 +383,70 @@ body {
   font-weight: 400;
   line-height: 130%;
   color: var(--message-color);
+}
+.density__table {
+  font-size: 1.6rem;
+  letter-spacing: -0.06rem;
+  font-weight: 400;
+  line-height: 130%;
+  width: 100%;
+}
+.density__row {
+  margin-bottom: 1.2rem;
+}
+.density__row:nth-child(n+6) {
+  display: none;
+}
+.density__bar {
+  width: 100%;
+  padding: 1rem 1.8rem;
+}
+.density__bar-outer {
+  width: 100%;
+  height: 1.2rem;
+  background-color: var(--container-background-color);
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.density__bar-inner {
+  background-color: #d3a0fa;
+  border-radius: 0 1.2rem 1.2rem 0;
+}
+.density__text {
+  text-align: end;
+  text-wrap: nowrap;
+}
+.density__see-more-btn {
+  font-size: 2rem;
+  letter-spacing: -0.06rem;
+  font-weight: 400;
+  line-height: 140%;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  position: relative;
+}
+.density__see-more-btn::after {
+  content: "⌃";
+  bottom: -0.7rem;
+  position: absolute;
+  right: -2rem;
+  transform: scaleX(1.5);
+}
+
+:root:has(#see-more-check:checked) .density__row {
+  display: table-row !important;
+}
+:root:has(#see-more-check:checked) .density__see-more-btn::after {
+  content: "⌄";
+  bottom: 0.7rem;
+}
+
+#see-more-check {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

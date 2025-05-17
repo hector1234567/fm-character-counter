@@ -1,3 +1,5 @@
+import { CharDensityTable } from "./charDensityTable.js";
+
 const textContainer = document.getElementById("text-container");
 const formErrorMessage = document.querySelector(".form__error-message");
 const charCount = document.getElementById("char-count");
@@ -7,20 +9,35 @@ const checkExcludeSpaces = document.getElementById("exclude-spaces");
 const checkCharLimit = document.getElementById("check-char-limit");
 const inputMaxWords = document.getElementById("max-words");
 const timeMessage = document.querySelector(".form__time-message");
+const densityDiv = document.querySelector(".density");
+const charDensityTable = new CharDensityTable(densityDiv);
 
 function init() {
   textContainer.addEventListener("input", handleTextInput);
   checkExcludeSpaces.addEventListener("change", handleTextInput);
   checkCharLimit.addEventListener("change", handleSetLimitChars);
   inputMaxWords.addEventListener("focusout", handleChangeCharsLimit);
+
+  charDensityTable.render();
+
+  presetPreferedColorScheme();
 }
 init();
+
+function presetPreferedColorScheme() {
+  const prefersDarkMode = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  document.getElementById("theme-checkbox").checked = prefersDarkMode;
+}
 
 function handleTextInput() {
   const text = textContainer.value;
   charCount.innerText = numberOfChars(text);
   wordCount.innerText = numberOfWords(text);
   sentenceCount.innerText = numberOfSentences(text);
+
+  charDensityTable.render(analizeString(text));
 }
 
 function numberOfChars(text) {
@@ -61,4 +78,16 @@ function setMinutesOfReadingByWords(words) {
   timeMessage.innerText = `Approx. reading time: ${Math.floor(
     words / 400
   )} minutes`;
+}
+
+function analizeString(string) {
+  const charsObj = {};
+  for (let char of string.toUpperCase()) {
+    if (!charsObj.hasOwnProperty(char)) {
+      charsObj[char] = 1;
+    } else {
+      charsObj[char] += 1;
+    }
+  }
+  return charsObj;
 }

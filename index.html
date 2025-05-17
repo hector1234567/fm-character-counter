@@ -13,7 +13,8 @@
 
     <title>Frontend Mentor | Character counter</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="index.js" defer></script>
+    <script type="module" src="charDensityTable.js"></script>
+    <script type="module" src="index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -71,12 +72,8 @@
               <span class="card__sub">Sentence Count</span>
             </li>
           </ul>
-          <div class="results__density density">
-            <h2 class="density__heading">Letter Density</h2>
-            <span class="density__message"
-              >No characters found. Start typing to see letter density.</span
-            >
-          </div>
+          <div class="results__density density"></div>
+          <input type="checkbox" id="see-more-check" />
         </div>
       </main>
     </div>
