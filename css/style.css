@@ -426,15 +426,18 @@ body {
   line-height: 140%;
   cursor: pointer;
   margin-top: 1rem;
-  display: inline-block;
+  display: none;
   position: relative;
 }
 .density__see-more-btn::after {
   content: "⌄";
-  bottom: -0.7rem;
+  bottom: 0.7rem;
   position: absolute;
   right: -2rem;
   transform: scaleX(1.5);
+}
+.density:has(.density__row:nth-child(6)) .density__see-more-btn {
+  display: inline-block;
 }
 
 :root:has(#see-more-check:checked) .density__row {
@@ -442,7 +445,7 @@ body {
 }
 :root:has(#see-more-check:checked) .density__see-more-btn::after {
   content: "⌃";
-  bottom: 0.7rem;
+  bottom: -0.7rem;
 }
 
 #see-more-check {

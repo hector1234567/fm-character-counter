@@ -37,7 +37,7 @@ class CharDensityTable {
     const percent = ((value * 100) / total).toFixed(2);
     return `
         <tr class="density__row">
-            <td class="density__char">${key}</td>
+            <td class="density__char">${key === "\n" ? "&crarr;" : key}</td>
             <td class="density__bar">
                 <div class="density__bar-outer">
                 <div class="density__bar-inner" style="width: ${percent}%"></div>
