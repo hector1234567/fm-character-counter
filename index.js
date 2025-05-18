@@ -33,9 +33,9 @@ function presetPreferedColorScheme() {
 
 function handleTextInput() {
   const text = textContainer.value;
-  charCount.innerText = numberOfChars(text);
-  wordCount.innerText = numberOfWords(text);
-  sentenceCount.innerText = numberOfSentences(text);
+  charCount.innerText = formatTwoDigits(numberOfChars(text));
+  wordCount.innerText = formatTwoDigits(numberOfWords(text));
+  sentenceCount.innerText = formatTwoDigits(numberOfSentences(text));
 
   charDensityTable.render(analizeString(text));
 }
@@ -56,6 +56,10 @@ function numberOfWords(text) {
 function numberOfSentences(text) {
   const sentences = text.match(/[^.!?]+[.!?]/g);
   return sentences ? sentences.length : 0;
+}
+
+function formatTwoDigits(num) {
+  return num < 10 ? "0" + num : num;
 }
 
 function handleSetLimitChars() {
